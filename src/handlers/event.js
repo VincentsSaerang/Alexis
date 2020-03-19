@@ -1,8 +1,8 @@
 const { readdirSync } = require("fs")
-
+const path = require("path")
 module.exports = client => {
     const load = dirs => {
-        const events = readdirSync(`./events/${dirs}/`).filter(d => d.endsWith('.js'));
+        const events = readdirSync(path.join(__dirname, `../events/${dirs}/`)).filter(d => d.endsWith('.js'));
 
         for (let file of events) {
             const evt = require(`../events/${dirs}/${file}`);
