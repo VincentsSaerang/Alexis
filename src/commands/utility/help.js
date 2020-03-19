@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js")
 const { good, error } = require("../../util/colors.json")
 const { readdirSync } = require("fs")
+const path = require("path")
  
 module.exports = {
     command: "help",
@@ -13,7 +14,7 @@ run: async (client, message, args) => {
     const db = await client.db.collection("guilds").doc(message.guild.id).get()
 
     if(!args[0]) {
-        const categories = readdirSync('./commands/')
+        const categories = readdirSync(path.join(__dirname, '../../commands/'))
 
         let embed = new MessageEmbed()
         .setTitle(`List of available commands (${client.commands.size})`)

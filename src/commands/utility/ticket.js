@@ -16,6 +16,7 @@ run: async (client, message, args) => {
         .setTitle(`Error!`)
         .setDescription(`Please, please provide a valid type of ticket (\`idea\` or \`bug\`)`)
         .setColor(error)
+        message.channel.send(embed)
     }
     if(args[0] === "idea") {
         if(!args[1]) {
@@ -37,7 +38,7 @@ run: async (client, message, args) => {
             .addField(`Content`, `\`${args.slice(1).join(" ")}\``)
             .addField(`Sent by`, `${message.author} **User ID:** ${message.author.id}`)
             .addField(`Sent from`, `${message.guild.name} (${message.guild.id})`)
-            .setColor(vars.good)
+            .setColor(good)
             .setTimestamp()
             .setFooter(`Answer to this ticket by doing \`${q.data().prefix}aticket ${message.author.id} <answer>\` (you need to be a developer)`, message.author.displayAvatarURL())
           )
@@ -61,7 +62,7 @@ run: async (client, message, args) => {
             .addField(`Content`, `\`${args.slice(1).join(" ")}\``)
             .addField(`Sent by`, `${message.author} **User ID:** ${message.author.id}`)
             .addField(`Sent from`, `${message.guild.name} (${message.guild.id})`)
-            .setColor(vars.good)
+            .setColor(good)
             .setTimestamp()
             .setFooter(`Answer to this ticket by doing \`${q.data().prefix}aticket ${message.author.id} <answer>\` (you need to be a developer)`, message.author.displayAvatarURL())
           )
