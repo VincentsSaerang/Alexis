@@ -6,7 +6,7 @@ module.exports = async (client, message) => {
   if(message.author.bot || message.channel.type === "dm") return;
 
     const db = await client.db.collection("guilds").doc(message.guild.id).get()
-    const prefix = db.data().prefix
+    const prefix = "ab!"
 
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
