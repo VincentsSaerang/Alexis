@@ -15,7 +15,7 @@ module.exports = async (client, member) => {
         goodbyeMessage = goodbyeMessage.replace(/%total/g, member.guild.memberCount);
       }
 
-      let welcomemsg = MessageEmbed()
+      let welcomemsg = new MessageEmbed()
         .setTitle(`Goodbye :( :wave:`)
         .setDescription(goodbyeMessage)
         .setThumbnail(member.user.displayAvatarURL())
