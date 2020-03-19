@@ -7,7 +7,7 @@ table.setHeading("Commands", "Load Status")
 
 module.exports = client => {
   const load = dirs => {
-    const commands = readdirSync(`../commands/${dirs}`).filter(d =>
+    const commands = readdirSync(`./commands/${dirs}/`).filter(d =>
       d.endsWith(".js")
     );
     for (let file of commands) {
