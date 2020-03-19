@@ -84,7 +84,8 @@ run: async (client, message, args) => {
         message.guild.channels.cache.forEach(async (channel) => {
             await channel.overwritePermissions(muterole, {
                 SEND_MESSAGES: false,
-                ADD_REACTIONS: false
+                ADD_REACTIONS: false,
+                SPEAK: false
             })
         })
     }
