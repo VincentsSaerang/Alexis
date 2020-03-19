@@ -16,6 +16,7 @@ run: async (client, message, args) => {
         .setTitle(`Error!`)
         .setDescription(`Please, please provide a valid type of ticket (\`idea\` or \`bug\`)`)
         .setColor(error)
+        message.channel.send(embed)
     }
     if(args[0] === "idea") {
         if(!args[1]) {
