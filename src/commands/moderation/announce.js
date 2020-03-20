@@ -13,9 +13,6 @@ run: async (client, message, args) => {
 
     let self = message.author
     let guildself = message.member
-    if (guildself.nickname === null || undefined) {
-      guildself.nickname = self.username
-    }
 
     let noperms = new MessageEmbed()
     .setTitle(`Error!`)
@@ -35,7 +32,7 @@ run: async (client, message, args) => {
     let announcement = new MessageEmbed()
     .setTitle(`New announcement!`)
     .setDescription(args.join(" "))
-    .setFooter(`Announcement posted by ${guildself.nickname}`, message.author.displayAvatarURL())
+    .setFooter(`Announcement posted by ${guildself.displayName}`, message.author.displayAvatarURL())
     .setColor(good)
     .setTimestamp()
 

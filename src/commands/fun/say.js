@@ -53,7 +53,7 @@ run: async (client, message, args) => {
         }
         if (args[0] !== "anonymous") {
           message.delete()
-          message.channel.send(`${message.author.username} said: ${args.slice(0).join(" ")}`)
+          message.channel.send(`${message.member.displayName} said: ${args.slice(0).join(" ")}`)
           return;
         }
       }
