@@ -42,7 +42,7 @@ run: async (client, message, args) => {
             .setTimestamp()
             .setFooter(`Answer to this ticket by doing \`${q.data().prefix}aticket ${message.author.id} <answer>\` (you need to be a developer)`, message.author.displayAvatarURL())
           )
-    } else if(args[0] === "bugs") {
+    } else if(args[0] === "bug") {
         if(!args[1]) {
             let embed = new MessageEmbed()
             .setTitle(`Error!`)
