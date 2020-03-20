@@ -4,7 +4,7 @@ const { good, error } = require("../../util/colors.json")
 module.exports = {
     command: "ticket",
     name: "Ticket",
-    usage: "ticker (type) (message)",
+    usage: "ticket (type) (message)",
     description: "Sends an idea or a bug to the developer team",
     category: "utility",
     accessible: "Members",
