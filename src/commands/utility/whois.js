@@ -26,17 +26,14 @@ run: async (client, message, args) => {
         if (self.presence.status === "offline") {
           selfstatus = "Offline"
         }
-        if (guildself.nickname === null || undefined) {
-          guildself.nickname = self.username
-        }
         let response = new MessageEmbed()
-        .setTitle(`Who is ${guildself.nickname}?`)
+        .setTitle(`Who is ${guildself.displayName}?`)
         .addField(`Username`, self.username, true)
         .addField(`ID`, self.id, true)
         .addField(`Account created at`, selfdate.toLocaleDateString(), true)
         .addField(`Status`, selfstatus, true)
         .addField('\u200b', '\u200b')
-        .addField(`Nickname`, guildself.nickname, true)
+        .addField(`Nickname`, guildself.dislayName, true)
         .addField(`Roles`, `${guildself.roles.cache.filter(r => r.name !== "@everyone").map(role => role.name).join(", ")}`, true)
         .addField(`Joined at`, guildself.joinedAt.toLocaleDateString(), true)
         .setColor(good)
@@ -63,17 +60,14 @@ run: async (client, message, args) => {
         if (self.presence.status === "offline") {
           selfstatus = "Offline"
         }
-        if (guildself.nickname === null || undefined) {
-          guildself.nickname = self.username
-        }
         let response = new MessageEmbed()
-        .setTitle(`Who is ${guildself.nickname}?`)
+        .setTitle(`Who is ${guildself.dislayName}?`)
         .addField(`Username`, self.username, true)
         .addField(`ID`, self.id, true)
         .addField(`Account created at`, selfdate.toLocaleDateString(), true)
         .addField(`Status`, selfstatus, true)
         .addField('\u200b', '\u200b')
-        .addField(`Nickname`, guildself.nickname, true)
+        .addField(`Nickname`, guildself.dislayName, true)
         .addField(`Roles`, `${guildself.roles.cache.filter(r => r.name !== "@everyone").map(role => role.name).join(", ")}`, true)
         .addField(`Joined at`, guildself.joinedAt.toLocaleDateString(), true)
         .setColor(good)
