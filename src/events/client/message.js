@@ -7,6 +7,12 @@ module.exports = async (client, message) => {
 
     const db = await client.db.collection("guilds").doc(message.guild.id).get()
     const prefix = "ab!"
+    if(db.data().starboard === (null || undefined) || db.data().starboard === (null || undefined)) {
+      client.db.collection("guilds").doc(message.guild.id).set({
+        "starboard": "false",
+        "starboardChannel": "starboard"
+      }, {merge: true})
+    }
 
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
