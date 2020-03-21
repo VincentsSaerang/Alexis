@@ -6,7 +6,7 @@ module.exports = async (client, message) => {
   if(message.author.bot || message.channel.type === "dm") return;
 
     const db = await client.db.collection("guilds").doc(message.guild.id).get()
-    const prefix = "ab!"
+    const prefix = db.data().prefix
     if(db.data().starboard === (null || undefined) || db.data().starboard === (null || undefined)) {
       client.db.collection("guilds").doc(message.guild.id).set({
         "starboard": "false",
