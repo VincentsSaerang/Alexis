@@ -6,7 +6,17 @@ module.exports = async (client, message) => {
   if(message.author.bot || message.channel.type === "dm") return;
 
     const db = await client.db.collection("guilds").doc(message.guild.id).get()
+<<<<<<< HEAD
     const prefix = "ab!"
+=======
+    const prefix = db.data().prefix
+    if(db.data().starboard === (null || undefined) || db.data().starboard === (null || undefined)) {
+      client.db.collection("guilds").doc(message.guild.id).set({
+        "starboard": "false",
+        "starboardChannel": "starboard"
+      }, {merge: true})
+    }
+>>>>>>> d06f9ac2917b3fbbcf9d5f2a8a880718472fbd47
 
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
