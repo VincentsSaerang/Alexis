@@ -29,7 +29,7 @@ run: async (client, message, args) => {
     let invite = await message.channel.createInvite()
     let user = message.mentions.members.first()
     let moderator = message.author
-    let reason = args.slice(1).join("")
+    let reason = args.slice(1).join(" ")
     let modchannel = message.guild.channels.cache.find(channel => channel.name === db.data().modLogChannel)
     if(!user) return message.channel.send(noargs)
     if(!reason) reason = "No reason provided."

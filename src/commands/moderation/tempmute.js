@@ -30,7 +30,7 @@ run: async (client, message, args) => {
 
     let user = message.mentions.members.first()
     let moderator = message.author
-    let reason = args.slice(2).join("")
+    let reason = args.slice(2).join(" ")
     let mutetime = args[1]
     let muterole = message.guild.roles.cache.find(r => r.name === db.data().muteRole)
     let modchannel = message.guild.channels.cache.find(channel => channel.name === db.data().modLogChannel)

@@ -62,7 +62,7 @@ run: async (client, message, args) => {
         let answer2 = new MessageEmbed()
         .setTitle(`Yay! Your ticket has been closed!`)
         .addField(`Closed by`, `[Alexis Dev Team] ${message.author.username}`)
-        .addField(`Answer`, args.slice(1).join(""))
+        .addField(`Answer`, args.slice(1).join(" "))
         .setTimestamp()
         .setFooter(`You can join our support server! https://discord.gg/zH5FZD7`)
         .setColor(good)
