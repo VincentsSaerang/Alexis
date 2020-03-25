@@ -11,12 +11,12 @@ module.exports = {
 run: async (client, message, args) => {
     const q = await client.db.collection("guilds").doc(message.guild.id).get()
 
-    if(!args[0] || args[0] !== ("bug" || "idea")) {
+    if(!args[0] || !args[0] === "idea" || !args[0] === "bug") {
         let embed = new MessageEmbed()
         .setTitle(`Error!`)
         .setDescription(`Please, please provide a valid type of ticket (\`idea\` or \`bug\`)`)
         .setColor(error)
-        message.channel.send(embed)
+        return message.channel.send(embed)
     }
     if(args[0] === "idea") {
         if(!args[1]) {
