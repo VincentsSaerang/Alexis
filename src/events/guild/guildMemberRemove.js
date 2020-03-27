@@ -23,7 +23,7 @@ module.exports = async (client, member) => {
         .setTimestamp()
         .setFooter(`ID: ${member.user.id}`, member.user.displayAvatarURL());
 
-      member.guild.channels.find(x => x.name === q.data().welcomerChannel).send(welcomemsg);
+      member.guild.channels.cache.find(x => x.name === q.data().welcomerChannel).send(welcomemsg);
 
     } else {
       return;
