@@ -23,7 +23,7 @@ module.exports = async (client, message) => {
 
     if (db.data().inviteLinkFilter === "true") {
       if (message.content.toLowerCase().includes("discord.gg/") || message.content.toLowerCase().includes("discordapp.com/invite/")) {
-        if (message.member.hasPermission("ADMINISTRATOR")) {
+        if (message.member.hasPermission("MANAGE_MESSAGES" || "ADMINISTRATOR")) {
           console.log("[INVITES FILTER] " + message.author.username + " posted a server invite link in  " + message.guild.name + " but he had admin perms")
         } else {
           message.delete()
