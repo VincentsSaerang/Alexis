@@ -62,12 +62,12 @@ run: async (client, message, args) => {
               .setColor(good);
             message.channel.send(codemsg);
           } catch (err) {
-            let error = new MessageEmbed()
+            let errr = new MessageEmbed()
               .setTitle(`Error!`)
               .addField(`Evaled:`, `\n\`\`\`xl\n${code}\n\`\`\``)
               .addField(`Error:`, `\n\`\`\`xl\n${clean(err)}\n\`\`\``)
               .setColor(error);
-            message.channel.send(error);
+            message.channel.send(errr);
           }
     }
 }
