@@ -69,7 +69,7 @@ run: async (client, message, args) => {
 
         let user = await client.users.cache.get(args[0])    
         user.createDM().then(dmc => {
-          dmc.send(answer2).then(message.guild.send(answer)).catch((e) => {
+          dmc.send(answer2).then(message.channel.send(answer)).catch((e) => {
             message.channel.send(nodm)
           })
         })
