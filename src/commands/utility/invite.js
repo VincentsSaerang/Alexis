@@ -11,7 +11,7 @@ module.exports = {
 run: async (client, message, args) => {
     let embed = new MessageEmbed()
     .setTitle(`Invite me!`)
-    .setDescription(`Invite me to your server! Just click [here](https://discordapp.com/api/oauth2/authorize?client_id=679036215005020388&permissions=2147483127&scope=bot)`)
+    .setDescription(`Invite me to your server! Just click [here](https://top.gg/bot/679036215005020388)`)
     .setColor(good)
     message.channel.send(embed)
 }
